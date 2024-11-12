@@ -16,12 +16,12 @@ The eight dimensions in DecodingTrust include:
 - Machine Ethics: Evaluating adherence to ethical guidelines in decision-making processes.
 - Fairness: Ensuring equitable treatment across different demographic groups.
 
-To evaluate these dimensions, the authors crafted custom datasets and prompt designs tailored to each area, creating scenarios that stress-test the models with adversarial, misleading, or ethically - challenging inputs. For instance, in assessing toxicity, they used both standard and challenging prompts specifically designed to elicit harmful responses. For stereotype bias, they examined the models' responses to statements containing embedded stereotypes and measured the likelihood of generating biased or stereotypical outputs.
-
 ![](Images/figure1_1.png)
 
 ![](Images/figure1_2.png)
 
+
+To evaluate these dimensions, the authors crafted custom datasets and prompt designs tailored to each area, creating scenarios that stress-test the models with adversarial, misleading, or ethically - challenging inputs. For instance, in assessing toxicity, they used both standard and challenging prompts specifically designed to elicit harmful responses. For stereotype bias, they examined the models' responses to statements containing embedded stereotypes and measured the likelihood of generating biased or stereotypical outputs.
 
 Systematic tests were conducted on GPT-3.5 and GPT-4 using the DecodingTrust benchmark across all eight dimensions. Key findings revealed that, while GPT-4 generally performs better than GPT-3.5 in standard benchmarks, it is more vulnerable to adversarial manipulation, especially through "jailbreaking" prompts. Such prompts circumvent content filters by exploiting GPT-4's enhanced instruction-following capabilities, leading to higher susceptibility to biased content and privacy leaks under carefully crafted prompts.
 
