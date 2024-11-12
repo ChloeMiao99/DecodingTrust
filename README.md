@@ -30,17 +30,19 @@ The study provided both quantitative and qualitative insights into the limitatio
 
 **Question 1**
 
-**In DecodingTrust, one of the evaluation criteria is 'out-of-distribution robustness.' Why is this aspect crucial for assessing the trustworthiness of GPT models, and how did the authors evaluate it to uncover vulnerabilities in GPT-3.5 and GPT-4?**
+_**In DecodingTrust, one of the evaluation criteria is 'out-of-distribution robustness.' Why is this aspect crucial for assessing the trustworthiness of GPT models?**_
 
 Out-of-distribution (OOD) robustness is critical for trustworthiness because real-world applications frequently expose language models to inputs or contexts that differ from those encountered during training. In these cases, a trustworthy model should recognize its limitations, avoid generating confident but inaccurate answers, and ideally respond with uncertainty or a disclaimer if it doesn’t "know" the answer. Failure in OOD robustness can lead to responses that are confidently incorrect, misleading users in high-stakes environments like healthcare, law, or finance.
+
+***How did the authors evaluate Out-of-Distribution Robustness to uncover vulnerabilities in GPT-3.5 and GPT-4:***
 
 The authors of DecodingTrust assessed OOD robustness by presenting GPT-3.5 and GPT-4 with prompts that included unfamiliar language styles (e.g., Shakespearean) and queries about recent events beyond the models' training data. They found that while GPT-4 was generally better at handling unfamiliar styles and could sometimes respond with "I don’t know" for recent events, it still occasionally "hallucinated" answers or gave made-up responses. This vulnerability suggests that while GPT-4 has improved in handling certain OOD prompts, it still requires enhancements in recognizing and managing unknown or out-of-scope inputs to be truly reliable in diverse real-world applications.
 
 **Question2**
 
-**"What makes GPT-4 more vulnerable to generating toxic or biased outputs in adversarial contexts compared to GPT-3.5, and what specific prompt types can lead to such behaviors?"**
+**What makes GPT-4 more vulnerable to generating toxic or biased outputs in adversarial contexts compared to GPT-3.5, and what specific prompt types can lead to such behaviors?**
 
-- Key Reasons for GPT-4’s Increased Vulnerability
+***Key Reasons for GPT-4’s Increased Vulnerability:***
 
 - **Enhanced Instruction Following:** 
   - GPT-4 has improved capabilities to follow instructions precisely, which is beneficial for most tasks but makes it more susceptible to adversarial prompts that guide it toward toxic or biased outputs.
@@ -65,7 +67,7 @@ The authors of DecodingTrust assessed OOD robustness by presenting GPT-3.5 and G
   - It highlights that GPT-4 has consistently higher toxicity scores than GPT-3.5, especially when straightforward or role-playing prompts are used.
 
 
-## Architecture overview
+## DecodingTrust intersection with mode design, model training, and model use
 
 **Intersection with Model Design and Architecture**
 
