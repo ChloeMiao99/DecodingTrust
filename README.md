@@ -1,6 +1,6 @@
 # DecodingTrust: A Comprehensive Assessment of Trustworthiness in GPT Models
 
-## Overview (C)
+## Overview 
 In recent years, large language models (LLMs) like GPT-3.5 and GPT-4 have shown impressive capabilities and are being increasingly considered for use in high-stakes areas such as healthcare, finance, and customer service. However, these models also bring trustworthiness challenges, especially when it comes to handling sensitive information, avoiding bias, and maintaining ethical responses. Despite improvements, there’s limited comprehensive research on these trustworthiness aspects, which is critical for deploying LLMs in real-world applications safely and responsibly.
 
 The main problem addressed by the paper is evaluating the trustworthiness of LLMs across multiple dimensions that are crucial for safe and ethical deployment. Trustworthiness here covers eight dimensions: toxicity, stereotype bias, adversarial robustness, out-of-distribution robustness, robustness against adversarial demonstrations, privacy, machine ethics, and fairness. Each of these areas presents unique challenges, as LLMs can still produce harmful, biased, or unethical outputs when presented with adversarial prompts or ambiguous contexts. Existing benchmarks tend to focus on narrow aspects, leaving gaps in understanding how these models perform across a broader trustworthiness spectrum.
@@ -12,7 +12,7 @@ They extend this approach to other areas by using benchmarks like AdvGLUE for ad
 ## Question1 (C)
 
 
-## Question2 (S)
+## Question2
 
 ### "What makes GPT-4 more vulnerable to generating toxic or biased outputs in adversarial contexts compared to GPT-3.5, and what specific prompt types can lead to such behaviors?"
 
@@ -41,7 +41,7 @@ They extend this approach to other areas by using benchmarks like AdvGLUE for ad
   - It highlights that GPT-4 has consistently higher toxicity scores than GPT-3.5, especially when straightforward or role-playing prompts are used.
 
 
-## Architecture overview (C)
+## Architecture overview
 
 **Intersection with Model Design and Architecture**
 The structure and design of large language models, specifically autoregressive transformer-based models like GPT-3.5 and GPT-4, are foundational to the trustworthiness challenges explored in DecodingTrust. These models generate text sequentially, predicting one token at a time based on prior tokens, which makes them highly sensitive to prompt design and susceptible to instruction-following biases. This design choice is optimized for fluency and coherence in response generation but introduces risks when models interact with adversarial or sensitive prompts. DecodingTrust reveals that while the instruction-following capability is desirable for natural, contextually appropriate responses, it also renders the models vulnerable to malicious prompt engineering that can lead to biased or toxic outputs.
@@ -58,7 +58,7 @@ The findings in DecodingTrust intersect significantly with practical concerns su
 
 For instance, the paper’s analysis of GPT-4’s susceptibility to “jailbreaking” prompts underlines a need for stricter prompt filtration and user-access control in deployment settings. Without such controls, GPT models could be manipulated to generate unsafe content despite embedded safety constraints. Additionally, the paper’s findings on privacy leakage imply that model deployment in contexts where sensitive data is processed should involve privacy-preserving mechanisms such as differential privacy or restricted response generation when handling confidential information. These findings highlight that achieving trustworthiness in model use requires a holistic approach that integrates secure prompt handling, enhanced privacy safeguards, and situational awareness regarding the model's limitations in ethical reasoning and fairness.
 
-## Critical Analysis (S)
+## Critical Analysis
 
 ### Areas Overlooked or Underdeveloped
 
@@ -85,7 +85,7 @@ For instance, the paper’s analysis of GPT-4’s susceptibility to “jailbreak
   - An in-depth examination of RLHF’s influence on both beneficial and undesirable behaviors would enhance understanding of GPT-4’s alignment and response tendencies. For example, analyzing how the RLHF process might introduce or amplify biases due to the nature of feedback could provide critical insights for refining training methodologies. This focus would help practitioners optimize RLHF’s implementation, creating models that align with human values more effectively and with reduced risk of harmful outputs.
 
 
-## Impacts (S)
+## Impacts
 
 Here’s an analysis of the paper's impact, addressing its significance in the AI landscape, how it intersects with existing research, and its potential influence on future developments:
 
@@ -140,8 +140,6 @@ In summary, this paper significantly impacts AI research by broadening the lens 
   * [GPT-3.5 and GPT-4 comparative analysis](https://datasciencedojo.com/blog/gpt-3-5-and-gpt-4-comparative-analysis/)
   * [GPT-4o vs. GPT-4 vs. GPT-3.5 Comparison in Real-World Scenarios](https://neoteric.eu/blog/gpt-4o-vs-gpt-4-vs-gpt-3-5-comparison-in-real-world-scenarios/)
 
-
-## Code demo (optional)
 
 ## Citation for paper
 If you find this project useful in your research, please consider citing:
