@@ -15,7 +15,8 @@ The eight dimensions in DecodingTrust include:
 - Privacy: Investigating the potential for models to leak sensitive information from training data or user interactions.
 - Machine Ethics: Evaluating adherence to ethical guidelines in decision-making processes.
 - Fairness: Ensuring equitable treatment across different demographic groups.
-- To evaluate these dimensions, the authors crafted custom datasets and prompt designs tailored to each area, creating scenarios that stress-test the models with adversarial, misleading, or ethically - challenging inputs. For instance, in assessing toxicity, they used both standard and challenging prompts specifically designed to elicit harmful responses. For stereotype bias, they examined the models' responses to statements containing embedded stereotypes and measured the likelihood of generating biased or stereotypical outputs.
+
+To evaluate these dimensions, the authors crafted custom datasets and prompt designs tailored to each area, creating scenarios that stress-test the models with adversarial, misleading, or ethically - challenging inputs. For instance, in assessing toxicity, they used both standard and challenging prompts specifically designed to elicit harmful responses. For stereotype bias, they examined the models' responses to statements containing embedded stereotypes and measured the likelihood of generating biased or stereotypical outputs.
 
 ![](Images/figure1_1.png)
 
