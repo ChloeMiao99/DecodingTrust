@@ -67,13 +67,7 @@ The authors of DecodingTrust assessed OOD robustness by presenting GPT-3.5 and G
   - It highlights that GPT-4 has consistently higher toxicity scores than GPT-3.5, especially when straightforward or role-playing prompts are used.
 
 
-## DecodingTrust intersection with mode design, model training, and model use
-
-**Intersection with Model Design and Architecture**
-
-The structure and design of large language models, specifically autoregressive transformer-based models like GPT-3.5 and GPT-4, are foundational to the trustworthiness challenges explored in DecodingTrust. These models generate text sequentially, predicting one token at a time based on prior tokens, which makes them highly sensitive to prompt design and susceptible to instruction-following biases. This design choice is optimized for fluency and coherence in response generation but introduces risks when models interact with adversarial or sensitive prompts. DecodingTrust reveals that while the instruction-following capability is desirable for natural, contextually appropriate responses, it also renders the models vulnerable to malicious prompt engineering that can lead to biased or toxic outputs.
-
-In addition, the reinforcement learning from human feedback (RLHF) incorporated in GPT models' architecture plays a dual role in enhancing trustworthiness and exacerbating certain vulnerabilities. RLHF aims to align model responses with human ethical standards and societal norms, which is advantageous for producing safe responses. However, as the paper illustrates, this alignment also makes models more susceptible to adversarial prompts that resemble benign instructions, thus “jailbreaking” content filters and safety constraints. This vulnerability reflects an architectural trade-off in the model's alignment mechanisms, revealing that further refinement is needed to balance instruction adherence with content safety.
+## DecodingTrust intersection with model training and model use
 
 **Intersection with Model Training**
 
