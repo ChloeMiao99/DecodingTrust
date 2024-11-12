@@ -9,9 +9,12 @@ The authors propose a comprehensive, multidimensional benchmark called DecodingT
 
 They extend this approach to other areas by using benchmarks like AdvGLUE for adversarial robustness, privacy tests to examine if models leak sensitive data, and ethical prompts that evaluate moral reasoning under pressure. This diverse and rigorous setup aims to uncover weaknesses that may not appear under standard conditions.
 
-## Question1 (C)
 
+In DecodingTrust, one of the evaluation criteria is 'out-of-distribution robustness.' Why is this aspect crucial for assessing the trustworthiness of GPT models, and how did the authors evaluate it to uncover vulnerabilities in GPT-3.5 and GPT-4?
 
+Out-of-distribution (OOD) robustness is critical for trustworthiness because real-world applications frequently expose language models to inputs or contexts that differ from those encountered during training. In these cases, a trustworthy model should recognize its limitations, avoid generating confident but inaccurate answers, and ideally respond with uncertainty or a disclaimer if it doesn’t "know" the answer. Failure in OOD robustness can lead to responses that are confidently incorrect, misleading users in high-stakes environments like healthcare, law, or finance.
+
+The authors of DecodingTrust assessed OOD robustness by presenting GPT-3.5 and GPT-4 with prompts that included unfamiliar language styles (e.g., Shakespearean) and queries about recent events beyond the models' training data. They found that while GPT-4 was generally better at handling unfamiliar styles and could sometimes respond with "I don’t know" for recent events, it still occasionally "hallucinated" answers or gave made-up responses. This vulnerability suggests that while GPT-4 has improved in handling certain OOD prompts, it still requires enhancements in recognizing and managing unknown or out-of-scope inputs to be truly reliable in diverse real-world applications.
 ## Question2
 
 ### "What makes GPT-4 more vulnerable to generating toxic or biased outputs in adversarial contexts compared to GPT-3.5, and what specific prompt types can lead to such behaviors?"
