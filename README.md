@@ -31,29 +31,9 @@ Out-of-distribution (OOD) robustness is critical for trustworthiness because rea
 
 The authors of DecodingTrust assessed OOD robustness by presenting GPT-3.5 and GPT-4 with prompts that included unfamiliar language styles (e.g., Shakespearean) and queries about recent events beyond the models' training data. They found that while GPT-4 was generally better at handling unfamiliar styles and could sometimes respond with "I don’t know" for recent events, it still occasionally "hallucinated" answers or gave made-up responses. This vulnerability suggests that while GPT-4 has improved in handling certain OOD prompts, it still requires enhancements in recognizing and managing unknown or out-of-scope inputs to be truly reliable in diverse real-world applications.
 
-## Architecture overview
+**Question2**
 
-**Intersection with Model Design and Architecture**
-
-The structure and design of large language models, specifically autoregressive transformer-based models like GPT-3.5 and GPT-4, are foundational to the trustworthiness challenges explored in DecodingTrust. These models generate text sequentially, predicting one token at a time based on prior tokens, which makes them highly sensitive to prompt design and susceptible to instruction-following biases. This design choice is optimized for fluency and coherence in response generation but introduces risks when models interact with adversarial or sensitive prompts. DecodingTrust reveals that while the instruction-following capability is desirable for natural, contextually appropriate responses, it also renders the models vulnerable to malicious prompt engineering that can lead to biased or toxic outputs.
-
-In addition, the reinforcement learning from human feedback (RLHF) incorporated in GPT models' architecture plays a dual role in enhancing trustworthiness and exacerbating certain vulnerabilities. RLHF aims to align model responses with human ethical standards and societal norms, which is advantageous for producing safe responses. However, as the paper illustrates, this alignment also makes models more susceptible to adversarial prompts that resemble benign instructions, thus “jailbreaking” content filters and safety constraints. This vulnerability reflects an architectural trade-off in the model's alignment mechanisms, revealing that further refinement is needed to balance instruction adherence with content safety.
-
-**Intersection with Model Training**
-
-The training methodology of GPT models, specifically the use of vast datasets that include diverse language patterns and content types, contributes significantly to trustworthiness issues. DecodingTrust highlights that despite the extensive data used, models can still produce biased, toxic, or privacy-violating outputs under specific conditions. This is partly because the pretraining datasets are so large and varied that they inevitably contain biased and potentially harmful content. Even with RLHF fine-tuning, which is intended to mitigate such outputs, the paper finds that GPT-4, in particular, can still be led to reproduce these biases and toxic patterns, especially under adversarial prompting.
-
-Moreover, the in-context learning capabilities of GPT-3.5 and GPT-4—where models adapt to few-shot demonstrations provided within a prompt—introduce new risks when these demonstrations are adversarially crafted. For example, misleading in-context demonstrations can skew model outputs toward producing biased or otherwise untrustworthy content. This reveals a limitation in the model's training approach, as it lacks sufficient safeguards against adversarial in-context learning scenarios, which could be mitigated by additional fine-tuning on adversarially crafted demonstrations or by introducing robust in-context learning defenses.
-
-**Intersection with Model Use and Deployment**
-
-The findings in DecodingTrust intersect significantly with practical concerns surrounding the deployment of GPT models, especially in high-stakes and sensitive applications. The use of these models in domains such as healthcare, finance, and customer service implies that any biases, toxic responses, or privacy breaches could have severe consequences. The paper demonstrates that the current trustworthiness mechanisms are insufficiently robust against well-crafted adversarial inputs, which raises serious concerns for their use in critical real-world applications.
-
-For instance, the paper’s analysis of GPT-4’s susceptibility to “jailbreaking” prompts underlines a need for stricter prompt filtration and user-access control in deployment settings. Without such controls, GPT models could be manipulated to generate unsafe content despite embedded safety constraints. Additionally, the paper’s findings on privacy leakage imply that model deployment in contexts where sensitive data is processed should involve privacy-preserving mechanisms such as differential privacy or restricted response generation when handling confidential information. These findings highlight that achieving trustworthiness in model use requires a holistic approach that integrates secure prompt handling, enhanced privacy safeguards, and situational awareness regarding the model's limitations in ethical reasoning and fairness.
-
-## Question2
-
-### "What makes GPT-4 more vulnerable to generating toxic or biased outputs in adversarial contexts compared to GPT-3.5, and what specific prompt types can lead to such behaviors?"
+**"What makes GPT-4 more vulnerable to generating toxic or biased outputs in adversarial contexts compared to GPT-3.5, and what specific prompt types can lead to such behaviors?"**
 
 - Key Reasons for GPT-4’s Increased Vulnerability
 
@@ -79,6 +59,26 @@ For instance, the paper’s analysis of GPT-4’s susceptibility to “jailbreak
   - This figure compares the average toxicity scores for GPT-3.5 and GPT-4 across various adversarial prompts.
   - It highlights that GPT-4 has consistently higher toxicity scores than GPT-3.5, especially when straightforward or role-playing prompts are used.
 
+
+## Architecture overview
+
+**Intersection with Model Design and Architecture**
+
+The structure and design of large language models, specifically autoregressive transformer-based models like GPT-3.5 and GPT-4, are foundational to the trustworthiness challenges explored in DecodingTrust. These models generate text sequentially, predicting one token at a time based on prior tokens, which makes them highly sensitive to prompt design and susceptible to instruction-following biases. This design choice is optimized for fluency and coherence in response generation but introduces risks when models interact with adversarial or sensitive prompts. DecodingTrust reveals that while the instruction-following capability is desirable for natural, contextually appropriate responses, it also renders the models vulnerable to malicious prompt engineering that can lead to biased or toxic outputs.
+
+In addition, the reinforcement learning from human feedback (RLHF) incorporated in GPT models' architecture plays a dual role in enhancing trustworthiness and exacerbating certain vulnerabilities. RLHF aims to align model responses with human ethical standards and societal norms, which is advantageous for producing safe responses. However, as the paper illustrates, this alignment also makes models more susceptible to adversarial prompts that resemble benign instructions, thus “jailbreaking” content filters and safety constraints. This vulnerability reflects an architectural trade-off in the model's alignment mechanisms, revealing that further refinement is needed to balance instruction adherence with content safety.
+
+**Intersection with Model Training**
+
+The training methodology of GPT models, specifically the use of vast datasets that include diverse language patterns and content types, contributes significantly to trustworthiness issues. DecodingTrust highlights that despite the extensive data used, models can still produce biased, toxic, or privacy-violating outputs under specific conditions. This is partly because the pretraining datasets are so large and varied that they inevitably contain biased and potentially harmful content. Even with RLHF fine-tuning, which is intended to mitigate such outputs, the paper finds that GPT-4, in particular, can still be led to reproduce these biases and toxic patterns, especially under adversarial prompting.
+
+Moreover, the in-context learning capabilities of GPT-3.5 and GPT-4—where models adapt to few-shot demonstrations provided within a prompt—introduce new risks when these demonstrations are adversarially crafted. For example, misleading in-context demonstrations can skew model outputs toward producing biased or otherwise untrustworthy content. This reveals a limitation in the model's training approach, as it lacks sufficient safeguards against adversarial in-context learning scenarios, which could be mitigated by additional fine-tuning on adversarially crafted demonstrations or by introducing robust in-context learning defenses.
+
+**Intersection with Model Use and Deployment**
+
+The findings in DecodingTrust intersect significantly with practical concerns surrounding the deployment of GPT models, especially in high-stakes and sensitive applications. The use of these models in domains such as healthcare, finance, and customer service implies that any biases, toxic responses, or privacy breaches could have severe consequences. The paper demonstrates that the current trustworthiness mechanisms are insufficiently robust against well-crafted adversarial inputs, which raises serious concerns for their use in critical real-world applications.
+
+For instance, the paper’s analysis of GPT-4’s susceptibility to “jailbreaking” prompts underlines a need for stricter prompt filtration and user-access control in deployment settings. Without such controls, GPT models could be manipulated to generate unsafe content despite embedded safety constraints. Additionally, the paper’s findings on privacy leakage imply that model deployment in contexts where sensitive data is processed should involve privacy-preserving mechanisms such as differential privacy or restricted response generation when handling confidential information. These findings highlight that achieving trustworthiness in model use requires a holistic approach that integrates secure prompt handling, enhanced privacy safeguards, and situational awareness regarding the model's limitations in ethical reasoning and fairness.
 
 ## Critical Analysis
 
