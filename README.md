@@ -110,8 +110,6 @@ For instance, the paper’s analysis of GPT-4’s susceptibility to “jailbreak
 
 ## Impacts
 
-Here’s an analysis of the paper's impact, addressing its significance in the AI landscape, how it intersects with existing research, and its potential influence on future developments:
-
 ### Impact of the Work on the AI Landscape
 
 - **Elevating Standards for Trustworthiness in AI:**
